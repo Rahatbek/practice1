@@ -1,0 +1,13 @@
+package com.rahatbek.javacore.chapter1.interfaces.practicexcample;
+
+public interface MyIF {
+    int getNumber();
+
+    default String getString() {
+        return "Объект типа String по умолчанию";
+    }
+
+    static int getDefaultNumber() {
+        return 0;
+    }
+}

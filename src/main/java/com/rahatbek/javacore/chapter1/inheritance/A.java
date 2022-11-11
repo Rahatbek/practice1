@@ -28,7 +28,17 @@ class SimpleInheritance {
         superOb.i = 10;
         superOb.j = 20;
         System.out.println("Содержимое обхекта superOb: ");
+        superOb.showIj();
+        System.out.println();
+        subOb.i = 7;
+        subOb.j = 8;
+        subOb.k = 9;
+        System.out.println("Содержимое объекта subOb: ");
         subOb.showIj();
-        // 210 page
+        subOb.showK();
+
+        System.out.println();
+        System.out.println("Сумма i, j и k в объекте subOb:");
+        subOb.sum();
     }
 }
