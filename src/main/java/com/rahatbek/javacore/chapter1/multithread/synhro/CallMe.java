@@ -1,5 +1,6 @@
 package com.rahatbek.javacore.chapter1.multithread.synhro;
 
+// В этой программе используется синхронизированный блок
 public class CallMe {
     void call(String msg) {
         System.out.print("[" + msg);
@@ -24,6 +25,7 @@ class Caller implements Runnable {
         t.start();
     }
 
+    // синхронизированный вызовы метода call()
     public void run() {
         synchronized (target) {
             target.call(msg);
@@ -38,6 +40,7 @@ class Synch1 {
         Caller ob2 = new Caller(target,"в синхронизированный");
         Caller ob3 = new Caller(target,"мир !");
 
+        // ожидать завершения потока исполнения
         try {
             ob1.t.join();
             ob2.t.join();
