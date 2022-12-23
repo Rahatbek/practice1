@@ -1,0 +1,83 @@
+
+    - Синхронизированный метод
+        public synchronized void doSomething() {
+            // ...
+        }
+    - Синхронизированный блок внутри метода
+        public void doSomething() {
+            synchronized (obj) {
+                // ...
+            }
+        }
+
+    - Ожидание и уведомления
+    ! Допустимо только внутри synchronized
+    ! void wait()
+      void wait(long millis)
+      void wait(long millis, int nanos)
+
+    ! void notify()
+      void notifyAll()
+
+      МОДЕЛЬ ПАМЯТИ -
+      - Атомарность
+        ! Чтение и запись полей всех типов, кроме long и double, происходит атомарно
+        ! Если поле объявлено с модификатором volatile, то атомарно читаются и пишутся long и double
+      - Видимость
+        ! Изменения значений полей, сделанные одним потоком, могут быть не видны в другом потоке
+        ! Изменения, сделанные одним потоком, могут быть видны в другом потоке в ином порядке
+        ! Правила формализованы при помощи отношения happens-before
+        ! Семантика final
+      - happens-before
+        ! Запись volatile-поля happens-before чтения этого поля
+        ! Освобождение монитора happens-before захват того ж е монитора
+        ! thread.start() happens-before thread.run()
+        ! Завершение thread.run() happens-before выход из thread.join()
+        ! ...
+
+                        ОЛЕГ ШЕЛАЕВ - Обзор возможностей многопоточности в Java
+            Software Transactional memory
+            Completable Futures     Actors      Fibers
+            Fork-Join Framework
+            Organized Threads
+            Threads
+
+        Поток это сущность способная выполнять инструкции программы и регулируемая "шедулером".
+        Зачем потоки - Моделируют железо, Моделируют операционку, User-space концепция
+        Как потоки общаются - Объекты и поля, Atomic, Очереди, База данных
+        Кто рулит общением? - The Java Language Specification?  17.4. Memory Model
+                PetersonLock
+        Выводы: потоки
+            - Тратят ресурсы
+            - Ручное управление
+            - Быстро и легко
+            - Не очень просто
+
+                        Группы потоков - "thread pool" - это когда существует m потоков, что бы выполнить n задач.
+        Подводные камни: EXECUTORS
+        Размер очереди
+        Стратегия переполнения
+        Стратегия отмены
+            Выводы: EXECUTORS
+                Простота настройки
+                Ограниченный overhead
+                Заметает сложные вопросы под коврик
+
+                            Fork Join
+        Рекурсивные задачи
+        Общие задачи параллелизации
+        Work stealing
+            Takeaway: Fork Join Pool
+                Эффективный
+                Настроенный умными людьми
+                Простота использования
+                Есть подводные камни
+
+                            Победа типов над многопоточностью
+        java.util.concurrent.CompletableFuture
+        thenApply(Function / Consumer / etc)
+        thenApplyAsync(Function / etc)
+
+                            ACTORS
+        "Actors" универсальный примитив многопоточных вычислений
+        Что может АКТОР? - Реагировать на сообщения. Породить конечное число акторов. Ответить заказчику
