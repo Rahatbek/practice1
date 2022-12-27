@@ -1,4 +1,4 @@
-package com.rahatbek.mytest.multithreads.frominternet;
+package com.rahatbek.mytest.multithreads.callicoder.basicconcurrency;
 
 public class ThreadJoinExample {
 
@@ -30,7 +30,7 @@ public class ThreadJoinExample {
 
         System.out.println("Waiting for Thread 1 to complete");
         try {
-            thread1.join(1000);
+            thread1.join(2000);
         } catch (InterruptedException e) {
             throw new IllegalArgumentException(e);
         }

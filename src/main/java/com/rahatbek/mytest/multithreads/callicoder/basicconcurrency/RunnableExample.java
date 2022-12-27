@@ -1,4 +1,4 @@
-package com.rahatbek.mytest.multithreads.frominternet;
+package com.rahatbek.mytest.multithreads.callicoder.basicconcurrency;
 
 // By providing a Runnable object
 public class RunnableExample implements Runnable{

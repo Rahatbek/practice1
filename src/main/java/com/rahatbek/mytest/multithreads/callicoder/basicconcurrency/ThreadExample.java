@@ -1,4 +1,4 @@
-package com.rahatbek.mytest.multithreads.frominternet;
+package com.rahatbek.mytest.multithreads.callicoder.basicconcurrency;
 
 // By extending Thread class
 public class ThreadExample extends Thread{

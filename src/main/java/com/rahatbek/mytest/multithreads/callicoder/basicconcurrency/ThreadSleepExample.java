@@ -1,4 +1,4 @@
-package com.rahatbek.mytest.multithreads.frominternet;
+package com.rahatbek.mytest.multithreads.callicoder.basicconcurrency;
 
 // Pausing execution of a Thread using sleep()
 public class ThreadSleepExample {

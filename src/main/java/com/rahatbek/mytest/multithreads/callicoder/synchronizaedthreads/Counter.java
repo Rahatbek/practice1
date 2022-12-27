@@ -1,4 +1,4 @@
-package com.rahatbek.mytest.multithreads.frominternet.synchronizaedthreads;
+package com.rahatbek.mytest.multithreads.callicoder.synchronizaedthreads;
 
 public class Counter {
     int count = 0;

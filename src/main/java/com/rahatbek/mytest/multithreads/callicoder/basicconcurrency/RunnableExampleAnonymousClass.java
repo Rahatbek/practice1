@@ -1,10 +1,10 @@
-package com.rahatbek.mytest.multithreads.frominternet;
+package com.rahatbek.mytest.multithreads.callicoder.basicconcurrency;
 
 public class RunnableExampleAnonymousClass {
     public static void main(String[] args) {
         System.out.println("Inside : " + Thread.currentThread().getName());
 
-        System.out.println("Creating Runnable... (Runnable runnable = new Runnable() {\n" +
+        System.out.println("Creating Runnable... \n(Runnable runnable = new Runnable() {\n" +
                 "            @Override\n" +
                 "            public void run() {\n" +
                 "                System.out.println(\"Inside : \" + Thread.currentThread().getName());\n" +

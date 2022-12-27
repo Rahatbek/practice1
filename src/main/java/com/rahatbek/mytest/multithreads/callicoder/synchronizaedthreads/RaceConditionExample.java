@@ -1,22 +1,21 @@
-package com.rahatbek.mytest.multithreads.frominternet.synchronizaedthreads;
+package com.rahatbek.mytest.multithreads.callicoder.synchronizaedthreads;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
-public class SynchronizedMethodExample {
-
+public class RaceConditionExample {
     public static void main(String[] args) throws InterruptedException {
         ExecutorService executorService = Executors.newFixedThreadPool(10);
 
-        SynchronizedCounter synchronizedCounter = new SynchronizedCounter();
+        Counter counter = new Counter();
 
         for (int i = 0; i < 1000; i++) {
-            executorService.submit(() -> synchronizedCounter.increment());
+            executorService.submit(() -> counter.increment());
         }
 
         executorService.shutdown();
         executorService.awaitTermination(60, TimeUnit.SECONDS);
-        System.out.println("Final count is : " + synchronizedCounter.getCount());
+        System.out.println("Final count is : " + counter.getCount());
     }
 }

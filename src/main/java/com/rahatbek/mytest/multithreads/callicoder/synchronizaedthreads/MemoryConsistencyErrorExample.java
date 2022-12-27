@@ -1,4 +1,4 @@
-package com.rahatbek.mytest.multithreads.frominternet.synchronizaedthreads;
+package com.rahatbek.mytest.multithreads.callicoder.synchronizaedthreads;
 
 // Memory Consistency Errors
 public class MemoryConsistencyErrorExample {
