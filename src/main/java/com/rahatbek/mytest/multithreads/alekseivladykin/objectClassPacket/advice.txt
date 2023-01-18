@@ -1,0 +1,7 @@
+Принцип <<Tell, Don't Ask>> Кода программируешь
+
+Procedural code gets information then makes decisions.
+Object-orieted code tells objects to do things.
+
+    - Правильно: говорить объектам, что вам от них нужно
+    - Неправильно: спрашивать у объекта его состояние и объяснить ему, что с ним делать дальше
