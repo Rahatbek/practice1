@@ -1,7 +1,7 @@
 package com.rahatbek.mytest.multithreads.alekseivladykin.objectClassPacket;
 
 @Version(value = "1.1", date = "2023-01-18")
-public class CharSequenceImpl implements MyCharSequence, MyCharSequence2{
+public class CharSequenceImpl implements MyCharSequence{
 
     char[] data;
 

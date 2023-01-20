@@ -14,5 +14,7 @@ public abstract class Shape {
         return color;
     }
 
-    public abstract void draw();
+    public void draw() {
+        System.out.println("shape");
+    }
 }

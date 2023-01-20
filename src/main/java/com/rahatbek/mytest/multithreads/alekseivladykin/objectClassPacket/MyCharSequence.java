@@ -11,6 +11,8 @@ public interface MyCharSequence {
     MyCharSequence subSequence(int start, int end);
 
     default MyCharSequence subSequence(int start) {
+
+        System.out.println();
         return subSequence(start, length());
     }
 }
